@@ -37,7 +37,7 @@ format:
     keep-tex: true    
 ```
 
-You can view a preview of the rendered template at <https://mike.quarto.pub/quarto-agu/>.
+You can view a preview of the rendered template at <https://mike.quarto.pub/demo-agu-template/>.
 
 ## Format Options
 

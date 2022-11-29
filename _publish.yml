@@ -1,0 +1,4 @@
+- source: template.qmd
+  quarto-pub:
+    - id: 0be8b107-8338-4f1e-9cba-47bded23aea9
+      url: 'https://quartopub.com/sites/mike/demo-agu-template'
