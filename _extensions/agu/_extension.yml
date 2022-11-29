@@ -1,47 +1,42 @@
-title: Article Format Template
-author: Christophe Dervieux
+title: AGU Template
+author: Mike Dervieux
 version: 0.1.0
 contributes:
   formats:
     common:
       # define below YAML configuration common to all formats
-      filters:
+#      filters:
         # You can include here Lua filters from your extension format 
-        - color-text.lua
       shortcodes:
         # You can include here Lua filters defining shortcodes from your extension
         - shortcodes.lua
       knitr:
         opts_chunk:
           echo: false
+      number-sections: true
+      csl: https://www.zotero.org/styles/american-geophysical-union
     pdf:
       # define default configuration for the pdf version of your format
-      documentclass: aft
-      colorlinks: true
-      urlcolor: red
-      fig-width: 6.5
-      fig-height: 4.5
-      # This format use a bst file with natbib
-      biblio-style: te
-      cite-method: natbib
-      # Set this below (`biblio-config: false`) if your cls already load a bst file
-      # biblio-config: false
-      # Content to add in header that your format is using
+      documentclass: agujournal2019
+      classoptions: draft
       header-includes: |
-        \usepackage{orcidlink}
-        \definecolor{mypink}{RGB}{219, 48, 122}
+        \usepackage{url} %this package should fix any errors with URLs in refs.
+        \usepackage{lineno}
+        \usepackage[inline]{trackchanges} %for better track changes. finalnew option will compile document with changes incorporated.
+        \usepackage{soul}
+        \linenumbers
       template-partials:
         # Add here the partials your format is using
         - "partials/title.tex"
         - "partials/_authors.tex"
+        - "partials/before-body.tex"
+        - "partials/_affiliations.tex"
+        - "partials/_corresponding-author.tex"
       format-resources:
         # Add here the resources required for the PDF rendering
-        - aft.cls
-        - te.bst
+        - agujournal2019.cls
+        - trackchanges.sty
     html:
       # define default configuration for the html version of your format
-      number-sections: true
       toc: true
-      theme: custom.scss
       # Use a CSL file to style (https://www.zotero.org/styles/)
-      csl: https://www.zotero.org/styles/journal-of-institutional-and-theoretical-economics

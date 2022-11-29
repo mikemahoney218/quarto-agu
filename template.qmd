@@ -1,181 +1,387 @@
 ---
-title: "Demo aft format to use as template"
+title: "Demo AGU template"
 format:
-  aft-pdf:
-    keep-tex: true  
-  aft-html: default
+  agu-pdf:
+    keep-tex: true
+  agu-html: default
 author:
-  - name: John Doe
+  - name: Michael J Mahoney
     affiliations:
-      - name: Dummy org
-        department: Cool Dep
-        address: Somewhere
-        city: Magic city
-        country: best one
-        postal-code: 9999
-      - Demo Journal
-    orcid: 0000-0000-0000-0000
-    email: JD@example.org
-    url: https://example.org/
-  - name: his friend
+      - name: State University of New York College of Environmental Science and Forestry
+        department: Graduate Program in Environmental Science
+        address: 1 Forestry Drive
+        city: Syracuse
+        region: NY
+        country: USA
+        postal-code: 13210
+    orcid: 0000-0003-2402-304X
+    email: fake_email@fakeyfake.com
+    url: https://mm218.dev
+    acknowledgements: Translated template to Quarto.
+    attributes:
+      corresponding: true
+  - name: Someone Else
     affiliations:
-      - Another Affiliation
+      - name: State University of New York College of Environmental Science and Forestry
+        department: Department of Sustainable Resources Management
+        address: 1 Forestry Drive
+        city: Syracuse, NY
+        country: USA
+        postal-code: 13210
 abstract: |
   This document is only a demo explaining how to use the template.
-keywords: [template, demo]
-reference-section-title: References
-bibliography: bibliography.bib  
+keypoints: 
+  - List up to three key points (at least one is required)
+  - Key Points summarize the main points and conclusions of the article
+  - Each must be 140 characters or fewer with no special characters or punctuation and must be complete sentences
+bibliography: bibliography.bib
+journalname: Journal of Advances in Modeling Earth Systems (JAMES)
 ---
 
-## Introduction {#sec-intro}
+# Plain Language Summary {.unnumbered}
 
-This is a dummy example only for the purpose to use this repo as a template starter for creating new formats.  For this `article-format-template` we call our dummy article `aft`. 
+The Plain Language Summary should be written for a broad audience,
+including journalists and the science-interested public, that will not have 
+a background in your field.
 
-This quarto extension format supports PDF and HTML outputs. `quarto-journals` is aiming at porting existing {{< latex >}} template from journals to be used with quarto. PDF format is what require the most work to fit the journals guideline, but Quarto offer a nice rendering for HTML output too. This demo format template only use basic HTML format without any customization for now.
+A Plain Language Summary is required in GRL, JGR: Planets, JGR: Biogeosciences,
+JGR: Oceans, G-Cubed, Reviews of Geophysics, and JAMES.
+See http://sharingscience.agu.org/creating-plain-language-summary/
 
-## About Quarto Extensions formats And Quarto Journals Article
+# Introduction {#sec-intro}
 
-First, please get familiar with the following resources: 
+This is an example of how to use this template to render journal articles. This template adapts the AGU LaTeX template and extends it for the Quarto publishing system.  
 
-- [Creating Formats](https://quarto.org/docs/extensions/formats.html) in Quarto as part of the [Extensions](https://quarto.org/docs/extensions/) mechanism.
-- [Journals Articles](https://quarto.org/docs/journals/) for Quarto.
+This quarto extension format supports PDF and HTML outputs. This template is primarily focused on generating acceptable {{< latex >}} outputs from Quarto, but renders an acceptable HTML output using the standard Quarto options.
 
-## Structure of this repository
+# Format Instructions
 
-Everything for the extensions is in `_extensions`. See Quarto doc for details. 
+You should set the `journalname` option in the YAML header to match the journal you intend to submit to. At time of writing, the full set of AGU journals is as follows:
 
-- In `partials`, you'll find the `.tex` partials that can be used and should be removed or tweaked,s
++ JGR: Atmospheres
++ JGR: Biogeosciences
++ JGR: Earth Surface
++ JGR: Oceans
++ JGR: Planets
++ JGR: Solid Earth
++ JGR: Space Physics
++ Global Biogeochemical Cycles
++ Geophysical Research Letters
++ Paleoceanography and Paleoclimatology
++ Radio Science
++ Reviews of Geophysics
++ Tectonics
++ Space Weather
++ Water Resources Research
++ Geochemistry, Geophysics, Geosystems
++ Journal of Advances in Modeling Earth Systems (JAMES)
++ Earth's Future
++ Earth and Space Science
++ Geohealth
 
-- Your extension can make shortcodes and lua filters available. This document shows the effect of the one provided in the `aft` format. 
+The AGU LaTeX template provides the following instructions:
 
-- `aft` format sets some defaults which are different from `pdf` or `html`, link setting links to URL in read inside PDF output.
+A title should be specific, informative, and brief. Use abbreviations only if they are defined in the abstract. Titles that start with general keywords then specific terms are optimized in searches.
 
-Source repository for this template format can found on [Github](https://github.com/quarto-journals/article-format-template)
+The main text should start with an introduction. Except for short
+manuscripts (such as comments and replies), the text should be divided
+into sections, each with its own heading.
+
+Headings should be sentence fragments and do not begin with a
+lowercase letter or number.
+
+## Section Heads
+
+Capitalize the first letter of each word (except for
+prepositions, conjunctions, and articles that are
+three or fewer letters).
+
+AGU follows standard outline style; therefore, there cannot be a section 1 without
+a section 2, or a section 2.3.1 without a section 2.3.2.
+Please make sure your section numbers are balanced.
+
+## In-Text Lists
+
+Do not use bulleted lists; enumerated lists are okay.
+
+## Equations
+
+Single-line equations are centered.
+Equation arrays will appear left-aligned.
+
+Math coded inside display math mode (\$...\$)
+ will not be numbered, e.g.,: $x^2=y^2 + z^2$
+
+Math coded inside \\begin{equation} and \\end{equation} will
+be automatically numbered, e.g.,:
+
+\begin{equation}
+x^2=y^2 + z^2
+\end{equation}
+
+To create multiline equations, use the
+\\begin{eqnarray} and \\end{eqnarray} environment
+as demonstrated below.
+
+\begin{eqnarray}
+  x_{1} & = & (x - x_{0}) \cos \Theta \nonumber \\
+        && + (y - y_{0}) \sin \Theta  \nonumber \\
+  y_{1} & = & -(x - x_{0}) \sin \Theta \nonumber \\
+        && + (y - y_{0}) \cos \Theta.
+\end{eqnarray}
+
+If you don't want an equation number, use the star form:
+
+\\begin{eqnarray\*}...\\end{eqnarray\*}
+
+Break each line at a sign of operation
+(+, -, etc.) if possible, with the sign of operation
+on the new line.
+
+Indent second and subsequent lines to align with
+the first character following the equal sign on the
+first line.
+
+Use an \\hspace{} command to insert horizontal space
+into your equation if necessary. Place an appropriate
+unit of measure between the curly braces, e.g.
+\\hspace{1in}; you may have to experiment to achieve
+the correct amount of space.
 
 
-### `_extensions\aft` 
+## Equation Numbering: Counter
 
-In this folder you'll find everything that defines the extensions which could be installed using `quarto install extension` or be part of the template when using `quarto use template`
+You may change equation numbering by resetting
+the equation counter or by explicitly numbering
+an equation.
 
-Format Metadata
-  ~ This is in `_extension.yml` is where all the metadata about the format are defined so that Quarto knows what to use.
-  Adapt this file for you own template.
+To explicitly number an equation, type \\eqnum{}
+(with the desired number between the brackets)
+after the \\begin{equation} or \\begin{eqnarray}
+command.  The \\eqnum{} command will affect only
+the equation it appears with; LaTeX will number
+any equations appearing later in the manuscript
+according to the equation counter.
 
-Partials
-  ~ In `partials`, there are the `.tex` files that will be used as Pandoc's template. We provide here all the partials supported by Quarto and custom one for this format. Quarto allows to provide partials to ease the process of tweaking the default latex Pandoc's template and keeping it up to date.  
-    This template repo contains all the relevant partials that you can use with Quarto _as example_. We only tweaked `title.tex` to show the usage of a custom partials called `_custom.tex`.  
-    **Only keep the partials that you need to tweak for the format you are creating**
+If you have a multiline equation that needs only
+one equation number, use a \\nonumber command in
+front of the double backslashes as shown in
+the multiline equation above.
 
-    If you need to completely change the default template (i.g customizing partials is not enough), then you need to provide your own template to Pandoc based on [`template.tex`](https://github.com/quarto-dev/quarto-cli/blob/main/src/resources/formats/pdf/pandoc/template.tex) and also using partials or not. This can be provided using the `template` YAML key in `_extension.yml` for Quarto to use it. 
+If you are using line numbers, remember to surround
+equations with \\begin{linenomath\*}...\\end{linenomath\*}
 
-    This is considered advanced configuration as it will be harder to maintain than only using partials but could be required for some specific format. Be aware that this may lead to loose some Pandoc or Quarto features tied to default `template.tex` content if you remove some specific parts.
+ To add line numbers to lines in equations:  
+ \\begin{linenomath\*}  
+ \\begin{equation}  
+ \\end{equation}  
+ \\end{linenomath\*}
 
-Lua Filters
-  ~ Most of the time, custom formats will need Lua filters to provide specific features like cross format supports or provides custom shortcodes through the Quarto extension mechanism. Those filters will be available to the user and could be used in the custom formats (according to `_extensions` metadata). 
-    We have provided two examples: 
+# Quarto
 
-    - `color-text.lua`, a Lua filter used to add color to inline text for PDF and HTML outputs using the same Markdown syntax
-    - `shorcodes.lua`, a Lua filter which follow [Quarto custom shortcodes](https://quarto.org/docs/authoring/shortcodes.html#custom-shortcodes) guidelines to provide a `{{< LaTeX >}}` shortcode to nicely print LaTeX in PDF and HTML. 
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
 
-    **Remove or replace with your own Lua filters**
+# Running Code
 
-Format resources
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed the outputs of code by including code blocks in the document; for instance, below (in the `.qmd` file) you can see the code that generated @tbl-glm.
 
-  ~ Resources required by the format needs to be available. We have provided two examples: 
+```{r}
+#| label: tbl-glm
+#| tbl-cap: "A table."
 
-    - `te.bst` is a biblio style file for demo. It has been downloaded from https://www.economics.utoronto.ca/osborne/latex/TEBST.HTM (http://econtheory.org/technical/te.bst) - Licence [LPPL](https://www.latex-project.org/lppl/)
-    - `aft.cls` is a dummy class file for this example format. It is a copy of official `article.cls`, the one provided in LaTeX installation (i.e at `kpsewhich article.cls`) and renamed as example (Licence LaTeX Project Public License)
-    - `custom.scss` is a style file to have a custom theme for our HTML format so that our Lua filter feature `color-tex.lua` works.
+# install.packages("broom")
+# install.packages("kableExtra")
+data("quine", package = "MASS")
+m_pois <- glm(Days ~ (Eth + Sex + Age + Lrn)^2, data = quine, family = poisson)
+kableExtra::kable_styling(
+  kableExtra::kbl(broom::tidy(m_pois))
+)
+```
 
-    Those files are referenced within the `_extension.yml` to be used with our example format.
+Note that this format does not support displaying blocks of code in PDF.
 
-    **Remove and replace with your own resources**
+# Markdown Basics
 
-`.quartoignore`
+This section of the template is adapted from [Quarto's documentation on Markdown basics](https://quarto.org/docs/authoring/markdown-basics.html).
 
-  ~ Sometimes it is useful to have some files only needed for reference or for development. They should be available in the source repository but not downloaded to the user when `quarto use template` is used.
+## Text Formatting
 
-    **Use `.quartoignore` to register such file and folder (one file or folder per line)**
++-----------------------------------+-------------------------------+
+| Markdown Syntax                   | Output                        |
++===================================+===============================+
+|     *italics* and **bold**        | *italics* and **bold**        |
++-----------------------------------+-------------------------------+
+|     superscript^2^ / subscript~2~ | superscript^2^ / subscript~2~ |
++-----------------------------------+-------------------------------+
+|     ~~strikethrough~~             | ~~strikethrough~~             |
++-----------------------------------+-------------------------------+
+|     `verbatim code`               | `verbatim code`               |
++-----------------------------------+-------------------------------+
 
-`style-guide` folder
+## Headings
 
-  ~ For `quarto-journals` format, use `style-guide` folder to include any documentation and resourced used for format creation, like a journal style guide or original `.tex` template. This folder is already added in `.quartoignore` in this example repo.
++---------------------+-----------------------------------+
+| Markdown Syntax     | Output                            |
++=====================+===================================+
+|     # Header 1      | # Header 1 {.heading-output}      |
++---------------------+-----------------------------------+
+|     ## Header 2     | ## Header 2 {.heading-output}     |
++---------------------+-----------------------------------+
+|     ### Header 3    | ### Header 3 {.heading-output}    |
++---------------------+-----------------------------------+
 
-    **Remove, rename or add to this folder**
+## Equations
 
-`template.qmd`
+Use `$` delimiters for inline math and `$$` delimiters for display math. For example:
 
-  ~ This file is the template document that shows how to use the custom format. It will be downloaded with other resource by `quarto use template`, and even offered to be renamed if the name `template.qmd` is used. 
++-------------------------------+-------------------------+
+| Markdown Syntax               | Output                  |
++===============================+=========================+
+|     inline math: $E = mc^{2}$ | inline math: $E=mc^{2}$ |
++-------------------------------+-------------------------+
+|     display math:             | display math:\          |
+|                               | $$E = mc^{2}$$          |
+|     $$E = mc^{2}$$            |                         |
++-------------------------------+-------------------------+
 
-    This file will usually use the custom format (here `aft-pdf` and `aft-html`) and show how to use the template. When you'll copy this template, you should be able to render this document to the demo format. 
+If assigned an ID, display math equations will be automatically numbered:
 
-    **Adapt this file to provide a suitable template for your custom format**
+$$
+\frac{\partial \mathrm C}{ \partial \mathrm t } + \frac{1}{2}\sigma^{2} \mathrm S^{2}
+\frac{\partial^{2} \mathrm C}{\partial \mathrm C^2}
+  + \mathrm r \mathrm S \frac{\partial \mathrm C}{\partial \mathrm S}\ =
+  \mathrm r \mathrm C 
+$$ {#eq-black-scholes}
 
-Other files
+## Other Blocks
 
-  ~ Other files are needed by the template and are usually user provided - they are not part of the custom format. 
++-----------------------------+--------------------------+
+| Markdown Syntax             | Output                   |
++=============================+==========================+
+|     > Blockquote            | > Blockquote             |
++-----------------------------+--------------------------+
+|     | Line Block            | | Line Block             |
+|     |   Spaces and newlines | |    Spaces and newlines |
+|     |   are preserved       | |    are preserved       |
++-----------------------------+--------------------------+
 
-    Here `bibliography.bib` is here to demo the usage of the bst file from the custom format.
+## Cross-references {#sec-crf}
 
-    **Remove this file and provide a suitable one for your template**
+![A sunflower](sunflower.png){#fig-sunflower}
+
++---------------------------------------+---------------------------------+
+| Markdown Format                       | Output                          |
++=======================================+=================================+
+|     @fig-sunflower is pretty.         | @fig-sunflower is pretty.       |
++---------------------------------------+---------------------------------+
+|     @tbl-glm was created from code.   | @tbl-glm was created from code. |
++---------------------------------------+---------------------------------+
+|     @sec-crf is this section.         | @sec-crf is this section.       |
++---------------------------------------+---------------------------------+
+|     @eq-black-scholes is above.       | @eq-black-scholes is above.     |
++---------------------------------------+---------------------------------+
+
+See the [Quarto documentation on cross-references for more](https://quarto.org/docs/authoring/cross-references.html).
+
+
+# Citations
+
+This section of the template is adapted from the [Quarto citation documentation](https://quarto.org/docs/authoring/footnotes-and-citations.html).
+
+Quarto supports bibliography files in a wide variety of formats including BibTeX and CSL. Add a bibliography to your document using the `bibliography` YAML metadata field.
+
+See the [Pandoc Citations](https://pandoc.org/MANUAL.html#citations) documentation for additional information on bibliography formats.
+
+## Citation Syntax {#sec-citations}
+
+Quarto uses the standard Pandoc markdown representation for citations. Here are some examples:
+
+
++-------------------------------------------+---------------------------------------------------------------------+
+| Markdown Format                           | Output                                                              |
++===========================================+=====================================================================+
+|     Blah Blah [see @knuth1984, pp. 33-35; | Blah Blah [see @knuth1984, pp. 33-35; also @wickham2015, chap. 1]   |
+|     also @wickham2015, chap. 1]           |                                                                     |
++-------------------------------------------+---------------------------------------------------------------------+
+|     Blah Blah [@knuth1984, pp. 33-35,     | Blah Blah [@knuth1984, pp. 33-35, 38-39 and passim]                 |
+|     38-39 and passim]                     |                                                                     |
++-------------------------------------------+---------------------------------------------------------------------+
+|     Blah Blah [@wickham2015; @knuth1984]. | Blah Blah [@wickham2015; @knuth1984].                               |
++-------------------------------------------+---------------------------------------------------------------------+
+|     Wickham says blah [-@wickham2015]     | Wickham says blah [-@wickham2015]                                   |
++-------------------------------------------+---------------------------------------------------------------------+
+
+You can also write in-text citations, as follows:
+
++-----------------------------------+-------------------------------+
+| Markdown Format                   | Output                        |
++===================================+===============================+
+|     @knuth1984 says blah.         | @knuth1984 says blah.         |
++-----------------------------------+-------------------------------+
+|     @knuth1984 [p. 33] says blah. | @knuth1984 [p. 33] says blah. |
++-----------------------------------+-------------------------------+
+
+See the [Pandoc Citations](https://pandoc.org/MANUAL.html#citations) documentation for additional information on citation syntax.
+
+To provide a custom citation stylesheet, provide a path to a CSL file using the `csl` metadata field in your document.
+
+# Optional Appendices go here
+
+The \\appendix command resets counters and redefines section heads. For instance, the new section header:
+
+\appendix
+
+# Here Is Appendix Title
+
+Is now labeled using `A`.
+
+# Optional Glossary, Notation or Acronym section goes here:
+
+Glossary is only allowed in Reviews of Geophysics.
+\begin{glossary}
+  \term{Term}
+   Term Definition here
+  \term{Term}
+   Term Definition here
+  \term{Term}
+   Term Definition here
+\end{glossary}
+
+
+# Acronyms
+NOTE that acronyms in the final published version will be spelled out when used in figure captions.
+   \begin{acronyms}
+   \acro{Acronym}
+   Definition here
+   \acro{EMOS}
+   Ensemble model output statistics
+   \acro{ECMWF}
+   Centre for Medium-Range Weather Forecasts
+   \end{acronyms}
+
+# Notation
+   \begin{notation}
+   \notation{$a+b$} Notation Definition here
+   \notation{$e=mc^2$}
+   Equation in German-born physicist Albert Einstein's theory of special
+  relativity that showed that the increased relativistic mass ($m$) of a
+  body comes from the energy of motion of the body—that is, its kinetic
+  energy ($E$)—divided by the speed of light squared ($c^2$).
+   \end{notation}
+
+# Open Research Section
+
+This section MUST contain a statement that describes where the data supporting the conclusions can be obtained. Data cannot be listed as ''Available from authors'' or stored solely in supporting information. Citations to archived data should be included in your reference list. Wiley will publish it as a separate section on the paper’s page. Examples and complete information are here:
+https://www.agu.org/Publish with AGU/Publish/Author Resources/Data for Authors
+
+
+\acknowledgments
+Enter acknowledgments here. This section is to acknowledge funding, thank colleagues, enter any secondary affiliations, and so on.
 
 {{< pagebreak >}}
 
-## Checklist: Creating a custom format
+# References {.unnumbered}
+\
 
-Here is the checklist to help you know what to modify:
-
-- Read the resources mentioned at the top,
-- Use this template repo to create a new repository for your format (Click on "Use this template" to create new github repo)
-- Once you are acquainted with the content, remove the resources that are there only as example (see above)
-- Update README by replacing `aft` and `Article Format Template` mentions for your journal format
-- Keep only the template partials that you need to tweak, and add custom ones if needed
-- Add any Lua filters for shortcodes and other that would be useful to create the expected output format
-- Add any external resource your format will need, and that should be part of the extension format that will be downloaded,
-- Check `_extension.yml` is updated correctly
-- Modify the skeleton `template.qmd` to your format and add any required resources to be downloaded to user.
-- Check `.quartoignore` is updated which everything that should not be downloaded.
-- Publish a demo of you format to github pages of the repo by using `quarto publish` command 
-
-## Demo of some features found in this demo journal template
-
-### Shortcode demo {#sec-shortcode}
-
-PDF are rendered using {{< latex >}} but it is best if one can use a Markdown syntax for cross format support.
-
-`{{< latex >}}` used in source is a shortcode syntax where the shortcode is included in the extension folder `_extensions`
-
-### Code chunk {#sec-chunks}
-
-This format hide chunks by default as option has been set in `_extension.yml` file.
-
-```{r}
-#| prompt: true
-# Loading some data but this chunk won't be shown.
-data("quine", package = "MASS")
-```
-
-But you can set `echo` option to `true` locally in the chunk
-
-```{r}
-#| echo: true
-m_pois <- glm(Days ~ (Eth + Sex + Age + Lrn)^2, data = quine, family = poisson)
-summary(m_pois)
-```
-
-### Text color {#sec-summary}
-
-Our format makes applying color on inline text possible using the `[content]{color=<name>}` syntax. Let's see an example.
-
-Here we are using a special feature of our format which is the coloring because [pink is a **nice** color]{color=mypink}.
-
-This is possible thanks to the Lua Filter included in the custom extension format.
-
-### Using references {.unnumbered}
-
-I did not read this book [@CameronTrivedi2013] but it must be interesting. 
-
-Differences between `aft-html` and `aft-pdf`: 
-
-* For the HTML format, we are using Pandoc citeproc to include the bibliography. Here `reference-section-title` controls the title for the chapter that will be used.
-* For the PDF format, `natbib` is used by default and the bibliography is included with a title by the LaTeX template. 
+::: {#refs}
+:::
