@@ -2,6 +2,12 @@
 
 This is a Quarto template that assists you in creating a manuscript for AGU journals. Please note that neither I nor this Quarto template are associated with AGU; this is simply a Quarto port of their [provided LaTeX template](https://www.agu.org/Publish-with-AGU/Publish).
 
+On Linux, use of this package may require the `texlive-bibtex-extra` package. On Ubuntu, install via:
+
+```bash
+sudo apt install texlive-bibtex-extra
+```
+
 ## Creating a New Article
 
 You can use this as a template to create an article for an AGU journal. To do this, use the following command:
