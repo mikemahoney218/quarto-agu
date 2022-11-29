@@ -4,7 +4,7 @@ This is a Quarto template that assists you in creating a manuscript for AGU jour
 
 ## Creating a New Article
 
-You can use this as a template to create an article for an AFT journal. To do this, use the following command:
+You can use this as a template to create an article for an AGU journal. To do this, use the following command:
 
 ```bash
 quarto use template mikemahoney218/quarto-agu
