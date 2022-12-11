@@ -45,6 +45,7 @@ format:
 
 You can view a preview of the rendered template at <https://mike.quarto.pub/demo-agu-template/>.
 
-## Format Options
 
-This format does not have specific format option. Include documentation of such option otherwise. See <https://github.com/quarto-journals/elsevier#format-options> for an example.
+## In The Wild
+
+Use this template for a paper or a preprint? [Let me know,](https://github.com/mikemahoney218/quarto-tandf/issues/new) and I'll add it to this section!
